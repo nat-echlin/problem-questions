@@ -14,4 +14,4 @@ add = max => {
 
 console.log(add(1000))
 
-// returns 23316 , correct
+// returns 23316 : correct
