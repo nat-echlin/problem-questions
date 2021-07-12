@@ -7,41 +7,42 @@ largestPrimeFactor = n => {
     let biggestFactor = 1
 
     do {
-        for(let i = 0; i <= primes.length; i++) {
-    
+        // current prime
 
-            // n / current prime
-
-            const currentPrime = primes[i]
-            if (n % currentPrime == 0) {
-                n /= currentPrime
-                if (currentPrime > biggestFactor) {
-                    biggestFactor = currentPrime
-                }
-                while (n % currentPrime == 0) {
-                    n /= currentPrime
-                } 
+        const currentPrime = primes[primes.length - 1]
+        if (n % currentPrime == 0) {
+            n /= currentPrime
+            if (currentPrime > biggestFactor) {
+                biggestFactor = currentPrime
             }
-
-            
-            // generate a new prime
-
-            let j = primes[primes.length - 1]
-            do {                   
-                primeFound = primes.some((prime) => {
-                    j % prime == 0
-                })
-
-                j++
-            } while (primeFound)
-            primes.push(j)
-            
+            while (n % currentPrime == 0) {
+                n /= currentPrime
+            } 
         }
+
+        
+        // generate a new prime
+
+        let j = primes[primes.length - 1]
+        do {                   
+            primeFound = primes.some((prime) => {
+                j % prime == 0
+            })
+
+            j++
+        } while (primeFound)
+        primes.push(j)
+                   
+        // end loop
+    
     } while (n > 1)
+
 
     return biggestFactor
 }
 
+
+
 console.log(
-    largestPrimeFactor(10)
+    largestPrimeFactor(600851475143)
 )
