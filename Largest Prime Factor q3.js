@@ -9,28 +9,33 @@ largestPrimeFactor = n => {
     do {
         for(let i = 0; i <= primes.length; i++) {
     
-            const currentPrime = primes[primes.length -1 + i]
+
+            // n / current prime
+
+            const currentPrime = primes[i]
             if (n % currentPrime == 0) {
                 n /= currentPrime
                 if (currentPrime > biggestFactor) {
                     biggestFactor = currentPrime
                 }
-                continue
+                while (n % currentPrime == 0) {
+                    n /= currentPrime
+                } 
             }
 
-            if (i == primes.length - 1) {
-                // generate new primes
+            
+            // generate a new prime
 
-                let j = primes[primes.length - 1]
-                do {                   
-                    primeFound = primes.some((prime) => {
-                        j % prime == 0
-                    })
+            let j = primes[primes.length - 1]
+            do {                   
+                primeFound = primes.some((prime) => {
+                    j % prime == 0
+                })
 
-                    j++
-                } while (primeFound)
-                primes.push(j)
-            }
+                j++
+            } while (primeFound)
+            primes.push(j)
+            
         }
     } while (n > 1)
 
