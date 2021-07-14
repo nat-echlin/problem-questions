@@ -1,23 +1,30 @@
 // By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
 
-// What is the 10 001st prime number?
+// What is the 10001st prime number?
 
 
-primes = [2]
 nthPrime = n => {
-    while (primes.length < n) {
-        let j = primes[primes.length - 1]
-            do {                   
-                primeFound = primes.some((prime) => {
-                    j % prime == 0
-                })
+    let primes = [2]
+    
+    while(primes.length < n) {
+        let i = primes[primes.length - 1] + 1
+        do {                   
+            primeFound = primes.some((prime) => {
+                return i % prime == 0
+            })
 
-                j++
-            } while (primeFound)
-            primes.push(j)
+            i++
+        } while (primeFound)
+        
+        primes.push(i - 1)
+       
     }
+
     return primes[primes.length - 1]
 }
 
 
 
+console.log(nthPrime(10001))
+
+// returns 104743 : correct
