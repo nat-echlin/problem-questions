@@ -3,15 +3,10 @@
 // What is the 10 001st prime number?
 
 
+primes = [2]
 nthPrime = n => {
     while (primes.length < n) {
-        
-    }
-}
-prime = 4
-
-genPrime = () => {
-    let j = primes[primes.length - 1]
+        let j = primes[primes.length - 1]
             do {                   
                 primeFound = primes.some((prime) => {
                     j % prime == 0
@@ -20,4 +15,9 @@ genPrime = () => {
                 j++
             } while (primeFound)
             primes.push(j)
+    }
+    return primes[primes.length - 1]
 }
+
+
+
