@@ -26,12 +26,12 @@ largestPrimeFactor = n => {
         let j = primes[primes.length - 1]
         do {                   
             primeFound = primes.some((prime) => {
-                j % prime == 0
+                return j % prime == 0
             })
 
             j++
         } while (primeFound)
-        primes.push(j)
+        primes.push(j - 1)
                    
         // end loop
     
