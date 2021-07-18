@@ -11,9 +11,9 @@ sumFibonacci = (max) => {
         // n = n + n1 
         // n1 = tempN 
 
-        // tempN = n
-        n, n1 = n + n1, n 
-        // n1 = tempN 
+        tempN = n
+        n = n + n1 
+        n1 = tempN 
 
         if (n % 2 == 0 && n < max) {
             sum += n

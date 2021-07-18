@@ -2,9 +2,12 @@ const grid = "731671765313306249192251196744265747423553491949349698352031277450
 arr = grid.split('')
 
 biggestProduct = -Infinity
-for(let i = 0; i + 3 < arr.length; i++) {
-    const product = arr[i] * arr[i + 1] * arr[i + 2] * arr[i + 3]
+for (let i = 0; i + 12 < arr.length; i++) {
+    
+    const product = arr[i] * arr[i + 1] * arr[i + 2] * arr[i + 3] * arr[i + 4] * arr[i + 5] * arr[i + 6] * arr[i + 7] * arr[i + 8] * arr[i + 9] * arr[i + 10] * arr[i + 11] * arr[i + 12]
     biggestProduct = Math.max(biggestProduct, product)
 }
 
 console.log(biggestProduct)
+
+// returns 23514624000 : correct
