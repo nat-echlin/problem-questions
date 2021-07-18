@@ -27,4 +27,4 @@ sumFibonacci = (max) => {
 
 console.log(sumFibonacci(4000000))
 
-// returns 4613732 : correct
+// returns 4613732 : correct 
