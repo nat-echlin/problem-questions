@@ -4,7 +4,7 @@
 
 largestPrimeFactor = n => {
     let primes = [2]
-    let biggestFactor = 1
+    let biggestFactor = -Infinity
 
     do {
         // current prime
@@ -20,6 +20,8 @@ largestPrimeFactor = n => {
             } 
         }
 
+
+        
         
         // generate a new prime
 

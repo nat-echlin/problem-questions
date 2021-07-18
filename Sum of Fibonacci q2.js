@@ -7,9 +7,13 @@
 sumFibonacci = (max) => {
     let n1 = 1, n = 1, sum = 0
     do {
-        tempN = n
-        n = n + n1 
-        n1 = tempN 
+        // tempN = n
+        // n = n + n1 
+        // n1 = tempN 
+
+        // tempN = n
+        n, n1 = n + n1, n 
+        // n1 = tempN 
 
         if (n % 2 == 0 && n < max) {
             sum += n
