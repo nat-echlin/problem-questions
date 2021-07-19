@@ -15,3 +15,26 @@
 
 // What is the value of the first triangle number to have over five hundred divisors?
 
+const getFactors = n => {
+    let nFactors = 0
+    for (let i = 1; i < Math.sqrt(n); i++) {
+        if (n % i == 0) {
+            nFactors += 2
+        }
+    }
+    return nFactors
+}
+
+const nthTriangleNumber = n => {
+    let sum = 0
+    for (let i = 0; i <= n; i++) {
+        sum += i
+    }
+    return sum
+}
+
+
+for(let i = 0; getFactors(nthTriangleNumber(i)) <= 500; i++) {
+    console.log(nthTriangleNumber(i + 1))
+}
+
