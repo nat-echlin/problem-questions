@@ -24,4 +24,4 @@ sumPrimes = upToN => {
 
 console.log(sumPrimes(2000000))
 
-// returns 142913828922 : correct
+// returns 142913828922 : correct 

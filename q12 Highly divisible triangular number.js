@@ -38,3 +38,4 @@ for(let i = 0; getFactors(nthTriangleNumber(i)) <= 500; i++) {
     console.log(nthTriangleNumber(i + 1))
 }
 
+// returns 76576500 : correct

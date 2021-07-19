@@ -43,4 +43,6 @@ for (let i = 0; i < grid.length - 1; i++) {
     }
 }
 
-console.log(biggest)
+console.log(biggest) 
+
+// returns 70600674 : correct
