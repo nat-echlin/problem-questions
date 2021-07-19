@@ -102,5 +102,32 @@ const numbers = ['37107287533902102798797998220837590246510135740250',
     '53503534226472524250874054075591789781264330331690'
 ]
 
-console.log(parseInt(numbers[0]) + parseInt(numbers[0]) + parseInt(parseInt(numbers[0])))
+const first10 = n => { // returns first 10 digits of a number, type int
+    return parseInt(n.toString().substr(0,10))
+}
 
+const lastSumUnchangingDigit = () => {
+    let previousSum = 0
+    let currentSum = 0
+    let i = 10
+    do {
+        for (let j = 0; j < numbers.length; j++) {
+            currentSum += parseInt(numbers[j].substr(0, i)) 
+        }
+        // console.log(currentSum)
+        if (first10(previousSum) == first10(currentSum)) {
+            console.log(i)
+        } else {
+            i++
+            previousSum = currentSum
+            currentSum = 0
+        }
+    } while (first10(previousSum) != first10(currentSum))
+    return first10(currentSum)
+}
+
+console.log(lastSumUnchangingDigit())
+
+// returns 5537376230, adding first 12 digits of each number : correct
+// NB; quite happy with this one to be honest, ive never tackled a problem like this and I think my method is quite nice.
+// it's definitely not optimised, and there's too many global variables but it works and doesn't take very long at all. id expect it uses a lot of memory though!
