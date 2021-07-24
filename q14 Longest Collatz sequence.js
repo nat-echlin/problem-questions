@@ -13,11 +13,18 @@
 // NOTE: Once the chain starts the terms are allowed to go above one million.
 
 returnNext = n => {
-    if (typeof n == Number) {
-
+    if (n % 2 == 0) { // n is even
+        if (n / 2 == 1) {
+            return 'end'
+        } else {
+            return n / 2
+        }
+    } else {
+        if (3 * n + 1 == 1) {
+            return 'end'
+        } else {
+            return 3 * n + 1
+        }
     }
 }
 
-console.log(
-    typeof 12 == 'number'
-)
