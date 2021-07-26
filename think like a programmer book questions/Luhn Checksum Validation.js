@@ -23,9 +23,10 @@ const validate = input => {
         let toAdd = undefined
         if (needsDouble(i)) { // RUNS ON EVERY OTHER DIGIT, IE INDEX 1, 3, 5
             if (num * 2 >= 10) {
-                const subStr = (num * 2).toString()
-                const subListNum = subStr.split('')
-                toAdd = parseInt(subListNum[0]) + parseInt(subListNum[1])
+            //  const subStr = (num * 2).toString()
+            //  const subListNum = subStr.split('')
+            //  toAdd = parseInt(subListNum[0]) + parseInt(subListNum[1])
+                toAdd = 1 + (num * 2) - 10
             } else {
                 toAdd = num * 2
             } 
