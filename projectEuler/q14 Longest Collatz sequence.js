@@ -12,7 +12,7 @@
 
 // NOTE: Once the chain starts the terms are allowed to go above one million.
 
-returnNext = n => {
+const returnNext = n => {
     if (n % 2 == 0) { // n is even
         if (n / 2 == 1) {
             return 'end'
@@ -28,3 +28,4 @@ returnNext = n => {
     }
 }
 
+console.log(returnNext(20))
