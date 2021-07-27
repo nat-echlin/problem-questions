@@ -1,6 +1,22 @@
 const input = [2, 3, 8, 9, 3, 5, 7, 7, 7, 2, 1, 2, 2]
-let totals = {}
+
+let triedVals = []
 for(let i = 0; i < input.length; i++) {
-    totals[input[i].toString] = totals[input[i].toString] + 1
+    if (true) {
+        true
+        // look up js map object
+    }
 }
-console.log(totals)
+
+
+
+
+
+
+
+
+// let totals = {}
+// for(let i = 0; i < input.length; i++) {
+//     totals[input[i].toString] = totals[input[i].toString] + 1
+// }
+// console.log(totals)
