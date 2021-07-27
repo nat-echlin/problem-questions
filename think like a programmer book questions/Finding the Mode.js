@@ -7,7 +7,7 @@ const max = {
     "amount":0
 }
 
-for(let i = 0; i < input.length; i++) {
+for (let i = 0; i < input.length; i++) {
     const currentInput = input[i]
     if (triedVals.includes(currentInput)) {
         continue
@@ -19,12 +19,14 @@ for(let i = 0; i < input.length; i++) {
                 occurences++
             }
         }
-        if (occurences > max) {
-            max
+        if (occurences > max.amount) {
+            max.value = currentInput
+            max.amount = occurences
         }
     }
 }
 
+console.log(max.value)
 
 
 
