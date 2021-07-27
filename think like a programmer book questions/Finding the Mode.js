@@ -1,16 +1,29 @@
 const input = [2, 3, 8, 9, 3, 5, 7, 7, 7, 2, 1, 2, 2]
 
 let triedVals = []
-for(let i = 0; i < input.length; i++) {
-    if (true) {
-        true
-        // look up js map object
-    }
+
+const max = {
+    "value":undefined,
+    "amount":0
 }
 
-
-
-
+for(let i = 0; i < input.length; i++) {
+    const currentInput = input[i]
+    if (triedVals.includes(currentInput)) {
+        continue
+    } else {
+        triedVals.push(currentInput)
+        let occurences = 0
+        for (let j = i; j < input.length; j++) {
+            if (input[j] == currentInput) {
+                occurences++
+            }
+        }
+        if (occurences > max) {
+            max
+        }
+    }
+}
 
 
 
