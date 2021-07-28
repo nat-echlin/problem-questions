@@ -54,8 +54,8 @@ const gen10NumsFrom = (startAt, howMany) => {
     }
 }
 
-gen10NumsFrom(1000, 5)
-
-console.log(
-    validate(1762483)
-) // returns true (valid) : correct
+const genCheckDigit = input => {
+    const str = input.toString()
+    const listNum = str.split('')
+    
+}
