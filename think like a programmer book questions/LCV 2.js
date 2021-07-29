@@ -32,9 +32,11 @@ const validate = input => {
         }
     })
 
-    if (total.digitCounter % 2 == 0) {     // even lengthed :
+    if (total.digitCounter % 2 == 0) {  
+        // even lengthed :
         total.final = total.even 
-    } else {    // odd lengthed :
+    } else {  
+        // odd lengthed :
         total.final = total.odd
     }
 
@@ -45,7 +47,22 @@ const validate = input => {
     }
 }
 
+const gen10NumsFrom = (startAt, howMany) => {
+    counter = 0
+    valids = []
+    for (let i = startAt; counter < howMany; i++) {
+        result = validate(i)
+        if (result) {
+            counter++
+            valids.push(i)
+        }
+    }
+    return valids
+}
 
-console.log(
-    validate(2188)      // 4 + 1 + 1 + 8 + 8 = 22
+gen10NumsFrom(8392, 5).forEach(element => {
+    console.log(
+        element
+    )
+}
 )
