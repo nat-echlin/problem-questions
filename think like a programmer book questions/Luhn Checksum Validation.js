@@ -57,5 +57,5 @@ const gen10NumsFrom = (startAt, howMany) => {
 const genCheckDigit = input => {
     const str = input.toString()
     const listNum = str.split('')
-    
+    // unfinished
 }
