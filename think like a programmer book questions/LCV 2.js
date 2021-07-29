@@ -5,22 +5,33 @@ const validate = input => {
         odd: 0
     }
 
+    let digitCounter = 0
     listNum.forEach(element, index => {
+        digitCounter++
         digit = element.toString()
-        const toAdd = {
-            even: undefined,
-            odd: undefined
+        const incrementer = (double, notDouble) => {
+            if (num * 2 >= 10) {
+                total[double] += 1 + (num * 2) - 10
+            } else {
+                total[double] += num * 2
+            }
+            total[notDouble] += num
         }
+        // end of fn
+
+
         if (index % 2 == 0) { // index is even
-            // double, 
-            // need to treat double as seperate digits?
-            // if yes, 
 
+            // stuff here
 
-            
-            // dont double, increment odd 
-        } else {
-            // dont double, increment odd 
+        } else { // index is odd
+            // do the same just switch around odd and even
+
+            // stuff
         }
     })
+
+    // digit counter shit
+    // ...
+
 }
