@@ -14,7 +14,7 @@ const check = array => {
 }
 
 const sort = array => {
-    fArray = array
+    let fArray = array
     do {
         result = check(fArray)
         if (result[0] == false) {
@@ -33,7 +33,9 @@ const sort = array => {
 // [1, 3, 2, 4]
 
 
-const x = [1, 2, 3, 4]
-x.splice(1, 0, x[2])
-x.splice(3, 1)
-console.log(x)
+// const x = [1, 2, 3, 4]
+// x.splice(1, 0, x[2])
+// x.splice(3, 1)
+// console.log(x)
+
+console.log(sort(test2))
