@@ -8,7 +8,7 @@ const check = array => {
         if (index == array.length - 1 || element.length >= array[index + 1].length) {
             return [true]
         } else {
-            return [false, index, index + 1]
+            return [false, index]
         }
     })    
 }
@@ -18,7 +18,9 @@ const sort = array => {
     do {
         result = check(fArray)
         if (result[0] == false) {
-            fArray.insert()
+            startIndex = result[1]
+            fArray.splice(startIndex, 0, fArray[startIndex + 1])
+            fArray.splice(startIndex + 2, 1)
         }
     } while (!result[0])
     return fArray
@@ -31,7 +33,7 @@ const sort = array => {
 // [1, 3, 2, 4]
 
 
-// const x = [1, 2, 3, 4]
-// x.splice(1, 0, x[2])
-// x.splice(3, 1)
-// console.log(x)
+const x = [1, 2, 3, 4]
+x.splice(1, 0, x[2])
+x.splice(3, 1)
+console.log(x)
