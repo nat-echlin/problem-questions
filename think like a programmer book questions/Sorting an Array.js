@@ -7,7 +7,7 @@ const testCases = [
 
 const check = array => {
     result = array.findIndex((element, index) => {
-        index == array.length - 1 || element.length >= array[index + 1].length
+        element.length >= array[index + 1].length
     })
 
     if (result == -1) {
@@ -30,8 +30,7 @@ const sort = array => {
     return fArray
 }
 
-console.log(sort(testCases[2]))
-
+c
 
 
 
