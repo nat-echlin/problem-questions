@@ -7,22 +7,32 @@ const testCases = [
 ]
 
 const check = array => {
-    isValid = array.every((element, index) => {
-        if (index == array.length - 1 || element.length >= array[index + 1].length) {
-            return true
-        } else {
-            return false
-        }
+    // isValid = array.every((element, index) => {
+    //     if (index == array.length - 1 || element.length >= array[index + 1].length) {
+    //         return true
+    //     } else {
+    //         return false
+    //     }
+    // })
+    // if (isValid) {
+    //     return [true]
+    // } else {
+    //     return [
+    //         false,
+    //         array.findIndex((element, index) => {
+    //             index == array.length - 1 || element.length >= array[index + 1].length
+    //         })
+    //     ]
+    // }
+
+    result = array.findIndex((element, index) => {
+        index == array.length - 1 || element.length >= array[index + 1].length
     })
-    if (isValid) {
+
+    if (result == -1) {
         return [true]
     } else {
-        return [
-            false,
-            array.findIndex((element, index) => {
-                index == array.length - 1 || element.length >= array[index + 1].length
-            })
-        ]
+        return [false, result]
     }
 }
 
