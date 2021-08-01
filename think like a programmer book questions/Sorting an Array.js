@@ -13,6 +13,8 @@ const check = array => {
     })    
 }
 
+// doesnt return as array, only returns as true / false
+
 const sort = array => {
     let fArray = array
     do {
