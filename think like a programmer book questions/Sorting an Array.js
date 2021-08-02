@@ -2,13 +2,26 @@ const testCases = [
     [1, 2, 3],
     ["abc", "ab", "a"],
     ["a", "ab", "a"],
+    ["abcd", "abcd", "abc", "abcdef"], 
     ["abscs", "", "aoun,sjs7", "bawcnvda", "as", "dasje", ";msosnf", "asjkg da wah", ", asdaw  sda"]
 ]
 
 const check = array => {
-    result = array.findIndex((element, index) => {
-        element.length >= array[index + 1].length
-    })
+    // const result = array.findIndex((element, index) => {
+    //     if (array[index + 1] == undefined) {
+    //         continue
+    //     }
+    //     return element.length <= array[index + 1].length
+    // })
+ 
+    let result = -1 
+    for (let index = 0; index < array.length - 1; index++) {
+        const element = array[index]
+        if (element.length < array[index + 1].length) {
+            result = index
+            break
+        }
+    }
 
     if (result == -1) {
         return [true]
@@ -30,7 +43,21 @@ const sort = array => {
     return fArray
 }
 
-c
+const x = sort(testCases[4])
+x.forEach(element => {
+    console.log(`"${element}"   has length: ${element.length}`)
+})
+//  returns : 
+
+// "asjkg da wah"   has length: 12
+// ", asdaw  sda"   has length: 12
+// "aoun,sjs7"   has length: 9
+// "bawcnvda"   has length: 8
+// ";msosnf"   has length: 7
+// "abscs"   has length: 5
+// "dasje"   has length: 5
+// "as"   has length: 2
+// ""   has length: 0
 
 
 
