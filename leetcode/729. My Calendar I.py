@@ -11,14 +11,25 @@
 # boolean book(int start, int end) Returns true if the event can be added to the calendar successfully without causing a double booking.
 # Otherwise, return false and do not add the event to the calendar.
 
-class MyCalendar:
-
-    def __init__(self):
-        
-
-    def book(self, start: int, end: int) -> bool:
-        
-
 # Your MyCalendar object will be instantiated and called as such:
 # obj = MyCalendar()
 # param_1 = obj.book(start,end)
+
+class MyCalendar:
+
+    def __init__(self):
+        self.events = []
+
+    def book(self, start: int, end: int) -> bool:
+        if self.events.length == 0:
+            self.events.append([start, end])
+            return True
+        else:
+            isValid = True
+            for event in self.events:
+                if start <= end:
+                    if start >= event[0] and end 
+                else:
+                    isValid = False
+                    break
+        return isValid
