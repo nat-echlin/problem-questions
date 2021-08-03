@@ -5,7 +5,7 @@
 # The event can be represented as a pair of integers start and end that represents a booking on the half-open interval [start, end), 
 # the range of real numbers x such that start <= x < end.
 
-# Implement the MyCalendar class:
+# Implement the MyCalendar class :
 
 # MyCalendar() Initializes the calendar object.
 # boolean book(int start, int end) Returns true if the event can be added to the calendar successfully without causing a double booking.
