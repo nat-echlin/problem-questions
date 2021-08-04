@@ -8,4 +8,10 @@ const nonRecursiveMethod = () => {
     return sum
 }
 
-console.log(nonRecursiveMethod())
+// console.log(nonRecursiveMethod())
+// returns 27: correct
+
+
+const tailRecursive = () => {
+    
+}
