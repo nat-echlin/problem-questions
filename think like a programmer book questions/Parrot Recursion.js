@@ -13,5 +13,9 @@ const nonRecursiveMethod = () => {
 
 
 const tailRecursive = () => {
-    
+    // how tf do i code this up
+}
+
+const headRecursive = () => {
+    // same issue 
 }
