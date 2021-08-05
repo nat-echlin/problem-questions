@@ -1,7 +1,14 @@
-Recursion occurs when you have a function that calls itself.
+*** Recursion occurs when you have a function that calls itself ***
 
 There are two types: head recursion and tail recursion ;
 Head is where the function call occurs before the processing, and tail is where the function
-call occurs after the processing in the function.
+    call occurs after the processing in the function.
 
-Big Recursive Idea (BRI)
+Big Recursive Idea (BRI) :
+    When you pass along a smaller version of a problem for someone else to solve, you don't care
+    how it's done, just that it is. 
+
+
+Start by identifying a 'base case' which is when the function will return the correct result,
+    without having to call itself again. From there build it up.
+
