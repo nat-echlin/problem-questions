@@ -6,9 +6,10 @@ Head is where the function call occurs before the processing, and tail is where 
 
 Big Recursive Idea (BRI) :
     When you pass along a smaller version of a problem for someone else to solve, you don't care
-    how it's done, just that it is. 
+    how it's done, just that it is. Hence - you can pretend that no recursion is taking place,
 
 
-Start by identifying a 'base case' which is when the function will return the correct result,
-    without having to call itself again. From there build it up.
+
+Start by identifying a 'base case' (the most trivial case) which is when the function will
+    return the correct result, without having to call itself again. From there build it up.
 
