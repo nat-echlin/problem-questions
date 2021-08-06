@@ -24,7 +24,7 @@ const arraySumDelegate = (arr, size) => {
 // console.log(arraySumDelegate(parrotNumbers, 5)) 
 // returns 27, correct
 
-const arraySumRecursive = (arr, size) {
+const arraySumRecursive = (arr, size) => {
     if (size == 0) {
         return 0
     } 
@@ -33,3 +33,6 @@ const arraySumRecursive = (arr, size) {
     const allButLastNum = arraySumRecursive(arr, size - 1)
     return lastNumber + allButLastNum
 }
+
+// console.log(arraySumRecursive(parrotNumbers, 5))
+// returns 27... how? i dont know
