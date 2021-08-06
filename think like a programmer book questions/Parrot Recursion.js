@@ -8,16 +8,28 @@ const nonRecursiveMethod = (arr, size) => {
     return sum
 }
 
-console.log(nonRecursiveMethod(parrotNumbers, parrotNumbers.length))
+// console.log(nonRecursiveMethod(parrotNumbers, parrotNumbers.length))
 // returns 27, correct
 
 const arraySumDelegate = (arr, size) => {
-    const size = arr.length
     if (size == 0) {
         return 0
     } 
 
     const lastNumber = arr[size - 1]
     const allButLastNum = nonRecursiveMethod(arr, size - 1)
+    return lastNumber + allButLastNum
+}
+
+// console.log(arraySumDelegate(parrotNumbers, 5)) 
+// returns 27, correct
+
+const arraySumRecursive = (arr, size) {
+    if (size == 0) {
+        return 0
+    } 
+
+    const lastNumber = arr[size - 1]
+    const allButLastNum = arraySumRecursive(arr, size - 1)
     return lastNumber + allButLastNum
 }
