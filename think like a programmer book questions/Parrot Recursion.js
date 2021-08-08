@@ -34,5 +34,5 @@ const arraySumRecursive = (arr, size) => {
     return lastNumber + allButLastNum
 }
 
-// console.log(arraySumRecursive(parrotNumbers, 5))
-// returns 27... how? i dont know
+console.log(arraySumRecursive(parrotNumbers, 5))
+// returns 27... how? i dont know. went through it. still BAFFED. w t f.
