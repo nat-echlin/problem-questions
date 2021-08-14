@@ -30,18 +30,28 @@ def writeToFile(content : list, filename : str):
 
 def analyseData(filename : str):
     dir_path = os.path.dirname(os.path.realpath(__file__))
-    listFile = None
+    listOflines = None
     with open(f"{dir_path}/saved runs/{filename}", "r") as file:
         stringFile = file.read()
-        listFile = stringFile.split('\n')
-    
-    for line in listFile:
-        
+        listOflines = stringFile.split('\n')
+    # chose to exit the with block for memory purposes, allows me to close file prior to analyis
+
+    dependentCount = 0
+    totalCount = 0
+    for line in listOflines[:-1]:
+        for sim in line.split(' '):
+            totalCount += 1
+            if int(sim) == 2:
+                dependentCount += 1
+    return round(dependentCount / totalCount, 3)
+
+
+print(analyseData('1D.txt'))
 
 # print(runSimulation(100, start_pos=2))
 # writeToFile([1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,2,2,2,2,2,2,2,2,2], 'abcd')
 
-writeToFile(runSimulation(1000), "1D")
+# writeToFile(runSimulation(1000), "1D")
 
 
 
