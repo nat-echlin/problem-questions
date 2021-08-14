@@ -19,12 +19,30 @@ def runSimulation(repetions : int ,start_pos : int = 0, max_goes = False):
 
 def writeToFile(content : list, filename : str):
     dir_path = os.path.dirname(os.path.realpath(__file__))
+    xPerLine = 20
     with open(f"{dir_path}/saved runs/{filename}", "a") as file:
-        for i in range(0, math.floor(len(content) / 10)):
-            print(i)
+        for i in range(0, math.ceil(len(content) / xPerLine)):
+                lineToWrite = ''
+                for element in content[i * xPerLine : i * xPerLine + xPerLine]:
+                    lineToWrite += f' {element}'
+                file.write(lineToWrite[1:])    #print(lineToWrite[1:])
+                file.write("\n")
 
+def analyseData(filename : str):
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    listFile = None
+    with open(f"{dir_path}/saved runs/{filename}", "r") as file:
+        stringFile = file.read()
+        listFile = stringFile.split('\n')
+    
+    for line in listFile:
+        
 
 # print(runSimulation(100, start_pos=2))
-writeToFile([1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,2,2,2,2,2,2,2,2,2], 'abcd')
+# writeToFile([1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,2,2,2,2,2,2,2,2,2], 'abcd')
+
+writeToFile(runSimulation(1000), "1D")
+
+
 
         
