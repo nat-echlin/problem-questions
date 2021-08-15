@@ -45,13 +45,18 @@ def analyseData(filename : str):
                 dependentCount += 1
     return round(dependentCount / totalCount, 3)
 
+y = [1, 2]
+print(y[1], y[-1])
 
-print(analyseData('1D.txt'))
+
+
+
+# print(analyseData('1D.txt'))
 
 # print(runSimulation(100, start_pos=2))
 # writeToFile([1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,2,2,2,2,2,2,2,2,2], 'abcd')
 
-# writeToFile(runSimulation(1000), "1D")
+# writeToFile(runSimulation(300), "1D.txt")
 
 
 
