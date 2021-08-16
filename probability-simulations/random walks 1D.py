@@ -20,7 +20,15 @@ def runSimulation1D(repetions : int, start_pos : int = 0, max_goes = False):
         pass
 
 def runSimulation2D(repetitions : int, start_x : int = 0, start_y : int = 0, max_goes = False):
-    pass
+    if not bool(max_goes):
+        goesList = []
+        for i in range(0, repetitions):
+            current_pos = [start_x, start_y + getRandom()] if getRandom() == 1 else [start_x + getRandom(), start_y]
+            goes = 1
+            while current_pos != [0,0]:
+                current_pos = 
+                goes += 1
+
 
 def writeToFile(content : list, filename : str):
     dir_path = os.path.dirname(os.path.realpath(__file__))
