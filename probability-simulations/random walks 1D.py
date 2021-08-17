@@ -25,7 +25,7 @@ def runSimulation2D(repetitions : int, start_x : int = 0, start_y : int = 0, max
         for i in range(0, repetitions):
             current_pos = [start_x, start_y + getRandom()] if getRandom() == 1 else [start_x + getRandom(), start_y]
             goes = 1
-            while current_pos != [0,0]:
+            while current_pos != [0,0]:      # while current_pos[0] != 0:        can be used for testing
                 getAxis = getRandom()
                 if (getAxis == 1):
                     current_pos = [current_pos[0], current_pos[1] + getRandom()]
@@ -77,7 +77,9 @@ def analyseData(filename : str):
 # print(runSimulation(100, start_pos=2))
 # writeToFile([1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,2,2,2,2,2,2,2,2,2], 'abcd')
 
-writeToFile(runSimulation1D(10000), "1D.txt")
+# writeToFile(runSimulation1D(10000), "1D.txt")
+
+print(runSimulation2D(5))
 
 
 
