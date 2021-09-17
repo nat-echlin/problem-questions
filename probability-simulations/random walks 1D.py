@@ -1,3 +1,4 @@
+from _typeshed import StrPath
 from random import randint
 import os, math
 
@@ -26,7 +27,7 @@ def runSimulation1D(repetions : int, start_pos : int = 0, max_goes : int = False
             if (goes < max_goes):
                 goesList.append(goes)
             else:
-                goesList.append("PASS")
+                goesList.append("STOP")
         return goesList
 
 def runSimulation2D(repetitions : int, start_x : int = 0, start_y : int = 0, max_goes = False):
@@ -69,8 +70,7 @@ def analyseData(filename : str):
     # chose to exit the with block for memory purposes, allows me to close file prior to analyis
     # ie incurs slighttt speed reduction to save a shit load of memory
 
-    dependentCount = 0
-    totalCount = 0
+    dependentCount, totalCount, stopCount = (0, 0, 0)
     for line in listOflines[:-1]:
         for sim in line.split(' '):
             if (sim.isdecimal() == True):
@@ -83,10 +83,15 @@ def analyseData(filename : str):
 
                 #dependent close
 
-    return round(dependentCount / totalCount, 3)    # 2nd param : int is how many dig to round to
+            else:
+                stopCount += 1
+
+    return round(f"{dependentCount / totalCount, 3}     [{stopCount} stop(s)]")    # 2nd param : int is how many dig to round to
 
 
-
+print(
+    runSimulation1D(10)
+)
 
 
 
