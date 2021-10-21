@@ -1,4 +1,3 @@
-from _typeshed import StrPath
 from random import randint
 import os, math
 
@@ -6,19 +5,18 @@ def getRandom():
     x = randint(0,1)
     return 1 if x == 0 else -1
 
-def runSimulation1D(repetions : int, start_pos : int = 0, max_goes : int = False):
+def runSimulation1D(repetitions : int, start_pos : int = 0, max_goes : int = False):
     goesList = []
     if not bool(max_goes):
-        for i in range(0, repetions):
+        for i in range(0, repetitions):
             current_pos = start_pos + getRandom()
             goes = 1
             while (current_pos != 0):
                 current_pos += getRandom()
                 goes += 1
             goesList.append(goes)
-        return goesList
     else:
-        for i in range(0, repetions):
+        for i in range(0, repetitions):
             current_pos = start_pos + getRandom()
             goes = 1
             while (current_pos != 0 and goes < max_goes):
@@ -28,11 +26,11 @@ def runSimulation1D(repetions : int, start_pos : int = 0, max_goes : int = False
                 goesList.append(goes)
             else:
                 goesList.append("STOP")
-        return goesList
+    return goesList
 
 def runSimulation2D(repetitions : int, start_x : int = 0, start_y : int = 0, max_goes = False):
+    goesList = []
     if not bool(max_goes):
-        goesList = []
         for i in range(0, repetitions):
             current_pos = [start_x, start_y + getRandom()] if getRandom() == 1 else [start_x + getRandom(), start_y]
             goes = 1
@@ -45,10 +43,22 @@ def runSimulation2D(repetitions : int, start_x : int = 0, start_y : int = 0, max
                 # above is extremely innefficient, must be a better way of doing it?
                 goes += 1
             goesList.append(goes)
-        return goesList
     else:
-        pass
-
+        for i in range(0, repetitions):
+            current_pos = [start_x, start_y + getRandom()] if getRandom() == 1 else [start_x + getRandom(), start_y]
+            goes = 1
+            while (current_pos != [0,0] and goes < max_goes):
+                getAxis = getRandom()
+                if (getAxis == 1):
+                    current_pos = [current_pos[0], current_pos[1] + getRandom()]
+                else:
+                    current_pos = [current_pos[0] + getRandom(), current_pos[1]]
+                goes += 1
+            if (goes < max_goes):
+                goesList.append(goes)
+            else:
+                goesList.append("STOP")
+    return goesList
 
 def writeToFile(content : list, filename : str):
     dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -81,17 +91,15 @@ def analyseData(filename : str):
                 if int(sim) == 2:
                     dependentCount += 1
 
-                #dependent close
+                # dependent close
 
             else:
                 stopCount += 1
 
-    return round(f"{dependentCount / totalCount, 3}     [{stopCount} stop(s)]")    # 2nd param : int is how many dig to round to
+    return round(f"{dependentCount / totalCount, 3}     [{stopCount} stop(s)]")    # 2nd param(int) is how many digits to round to
 
-
-print(
-    runSimulation1D(10)
-)
+if __name__ == "__main__":
+    writeToFile(runSimulation2D(1000 , max_goes=10000), "2D.txt")
 
 
 
