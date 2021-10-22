@@ -1,5 +1,5 @@
 from random import randint
-import os, math
+import os, math, time
 
 def getRandom():
     x = randint(0,1)
@@ -29,6 +29,7 @@ def runSimulation1D(repetitions : int, start_pos : int = 0, max_goes : int = Fal
     return goesList
 
 def runSimulation2D(repetitions : int, start_x : int = 0, start_y : int = 0, max_goes = False):
+    start_time = time.time()
     goesList = []
     if not bool(max_goes):
         for i in range(0, repetitions):
@@ -58,7 +59,10 @@ def runSimulation2D(repetitions : int, start_x : int = 0, start_y : int = 0, max
                 goesList.append(goes)
             else:
                 goesList.append("STOP")
-    return goesList
+    return {
+        "data":goesList,
+        "duration":f"{round(time.time() - start_time, 3)} seconds"
+    }        
 
 def writeToFile(content : list, filename : str):
     dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -96,10 +100,16 @@ def analyseData(filename : str):
             else:
                 stopCount += 1
 
-    return round(f"{dependentCount / totalCount, 3}     [{stopCount} stop(s)]")    # 2nd param(int) is how many digits to round to
+    return f"p= {round(dependentCount / totalCount, 3)}     [{stopCount} stop(s)]"    # 2nd param(int) is how many digits to round to
 
 if __name__ == "__main__":
-    writeToFile(runSimulation2D(1000 , max_goes=10000), "2D.txt")
+    MAX = 10000
+    aggregateData = runSimulation2D(1000 , max_goes=MAX)
+    print(aggregateData["duration"])
+    # writeToFile(aggregateData["data"], f"2D,{MAX}.txt")
+    
+    
+    # print(analyseData(f"2D,{MAX}.txt"))
 
 
 
