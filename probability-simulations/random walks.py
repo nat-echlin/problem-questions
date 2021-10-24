@@ -93,44 +93,36 @@ def analyseData(filename : str):
 
                 # dependent open
 
-                if int(sim) == 2:
+                # if int(sim) = 2:
+                #     dependentCount += 1
+                if True:
                     dependentCount += 1
+
 
                 # dependent close
 
             else:
                 stopCount += 1
 
-    return f"p= {round(dependentCount / totalCount, 3)}     [{stopCount} stop(s)]"    # 2nd param(int) is how many digits to round to
+    return f"p= {round(dependentCount / totalCount, 3)}     [{stopCount} stop(s) of {totalCount + stopCount} : stop p= {round(stopCount / (totalCount + stopCount), 4)}]"    # 2nd param(int) is how many digits to round to
 
 if __name__ == "__main__":
-    MAX = 10000
+
     # aggregateData = runSimulation2D(1000 , max_goes=MAX)
     # print(aggregateData["duration"])
-    MAX = 100
-    writeToFile(runSimulation2D(1000 , max_goes=MAX)["data"], f"2D,{MAX}.txt")
-    MAX = 10
-    writeToFile(runSimulation2D(4000 , max_goes=MAX)["data"], f"2D,{MAX}.txt")
-    MAX = 1000
-    writeToFile(runSimulation2D(4000 , max_goes=MAX)["data"], f"2D,{MAX}.txt")
-    MAX = 10000
-    writeToFile(runSimulation2D(4000 , max_goes=MAX)["data"], f"2D,{MAX}.txt")
-    MAX = 100000
-    writeToFile(runSimulation2D(4000 , max_goes=MAX)["data"], f"2D,{MAX}.txt")
-    
-    
-    # print(analyseData(f"2D,{MAX}.txt"))
+
+    # MAX = 100
+    # writeToFile(runSimulation2D(1000 , max_goes=MAX)["data"], f"2D,{MAX}.txt")
+    # MAX = 100000
 
 
+    print(analyseData(f"2D,{'10'}.txt"))
+    print(analyseData(f"2D,{'100'}.txt"))
+    print(analyseData(f"2D,{'1000'}.txt"))
+    print(analyseData(f"2D,{'10000'}.txt"))
+    print(analyseData(f"2D,{'100000'}.txt"))
 
-# print(analyseData('1D.txt'))
 
-# print(runSimulation(100, start_pos=2))
-# writeToFile([1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,2,2,2,2,2,2,2,2,2], 'abcd')
-
-# writeToFile(runSimulation1D(10000), "1D.txt")
-
-# print(runSimulation2D(5))
 
 
 
