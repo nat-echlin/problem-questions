@@ -1,0 +1,5 @@
+0.722 seconds for 1000 max=100
+0.338 seconds for 4000 max=10
+15.719 seconds for 4000 max=1000
+126.109 seconds for 4000 max=10000
+1041.415 seconds for 4000 max=100000
