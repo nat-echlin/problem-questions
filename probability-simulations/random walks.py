@@ -112,7 +112,7 @@ if __name__ == "__main__":
     # print(aggregateData["duration"])
 
     # MAX = 100
-    # writeToFile(runSimulation2D(1000 , max_goes=MAX)["data"], f"2D,{MAX}.txt")
+    writeToFile(runSimulation1D(10), f"1d....txt")
     # MAX = 100000
 
 
